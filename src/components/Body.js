@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import Wallet from "./Wallet";
 
 export default function Body() {
+  const [wallet, setWallet] = useState(false);
+  const showWallet = () => {
+    setWallet(true);
+  };
   return (
     <div>
+      {wallet ? <Wallet /> : ""}
       <div className="app-container">
-          <div className="section main-section">
-          <div className = "container">
-              <div className="row">
+        <div className="section main-section">
+          <div className="container">
+            <div className="row">
               <div className="col-4 w-full-img">
                 <img
                   alt="NFT name"
@@ -29,9 +35,10 @@ export default function Body() {
                   </p>
                   <div className="sc-dkPtRN ikczMY mt-6 text-centered">
                     <button
-                      className="MuiButtonBase-root MuiButton-root MuiButton-contained sc-bdvvtL jOqoQl MuiButton-containedPrimary"
+                      className="MuiButtonBase-root MuiButton-root MuiButton-contained mt-6 text-centered button"
                       tabIndex="0"
                       type="button"
+                      onClick={showWallet}
                     >
                       <span className="MuiButton-label">Connect Wallet</span>
                       <span className="MuiTouchRipple-root"></span>
@@ -46,11 +53,11 @@ export default function Body() {
                   <span className="MuiButton-label">Another button</span>
                   <span className="MuiTouchRipple-root"></span>
                 </button>
-                </div>
               </div>
-              </div>
-              </div>
+            </div>
           </div>
+        </div>
+      </div>
     </div>
   );
 }
