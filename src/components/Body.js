@@ -15,6 +15,7 @@ export default function Body() {
             <div className="row">
               <div className="col-4 w-full-img">
                 <img
+                  width="550px"
                   alt="NFT name"
                   src="https://falleneclipse.vercel.app/logo.png"
                 />
